@@ -49,7 +49,7 @@ func execPINGCommand(cmdParam, count string) string {
 	// Step 5: Execute OS command ping
 	c, err := exec.Command("ping", "-c", count, cmdParam).CombinedOutput()
 	if err != nil {
-		return "Error! Command execution failed" + err.Error()
+		return "Error! Command execution failed: " + err.Error()
 	}
 
 	return string(c)
