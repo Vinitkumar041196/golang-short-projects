@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"os/exec"
 	"strings"
 )
 
@@ -26,6 +27,25 @@ func main() {
 			os.Exit(0)
 		}
 
+		// Step 4: implement ping command
+		if strings.Compare("ping", commandString[0]) == 0 {
+			commandOutput := execPINGCommand(commandString[1])
+			fmt.Println(commandOutput)
+		} else {
+			fmt.Println("Command not supported by the CLI")
+		}
+
 		fmt.Print("=>")
 	}
+
+}
+
+func execPINGCommand(cmdParam string) string {
+	// Step 5: Execute OS command ping
+	c, err := exec.Command("ping", "-c", "3", cmdParam).CombinedOutput()
+	if err != nil {
+		return "Error! Command execution failed" + err.Error()
+	}
+
+	return string(c)
 }
