@@ -10,7 +10,7 @@ import (
 
 func main() {
 	// Display Starting Prompt
-	fmt.Println("Cloud CLI")
+	fmt.Println("Welcome to PING CLI")
 	fmt.Println("------------------")
 	fmt.Print("=>")
 
@@ -23,8 +23,9 @@ func main() {
 		var commandString []string = strings.Split(userInput, " ")
 
 		switch strings.ToLower(commandString[0]) {
-		case "exit":
+		case "exit", "q", "quit":
 			// implement exit Command
+			fmt.Println("Exiting...")
 			os.Exit(0)
 		case "ping":
 			// implement ping command

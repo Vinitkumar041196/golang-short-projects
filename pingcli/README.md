@@ -3,7 +3,18 @@
 Pingcli is a demo project showcasing Golang's ability to create CLI utilities and execute os commands programatically.
 
 I have created a simple CLI program that keeps on accepting user input using bufio Scanner from STDIN and execute the command.
-It supports two commands: exit and ping (with IP/url and count as parameters)
+It supports two commands: 
+1. "exit" or "q" or "quit" : to exit program
+2. "ping": takes two args
+    - IP address or url to ping 
+    - Count or number of packet to send for ping
 
-Sample execution:
-![alt text](image.png)
+## Sample execution:
+
+Command:
+
+```
+go run cli.go
+```
+
+![console output](image.png)
