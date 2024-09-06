@@ -17,4 +17,4 @@ Command:
 go run cli.go
 ```
 
-![console output](image.png)
+![console with success and error output](image.png)
